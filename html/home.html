@@ -16,7 +16,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: #2f665f;
+            background: #2c8a4a;
             color: white;
         }
         .nav-links {
@@ -70,9 +70,39 @@
         footer {
             text-align: center;
             padding: 1rem;
-            background: #2f665f;
+            background: #2c8a4a;
             color: white;
         }
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #2c8a4a;
+        color: white;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
     </style>
 </head>
 <body>
@@ -82,8 +112,17 @@
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="nav-links">
             <a href="/">Inicio</a>
-            <a href="/login">Login</a>
+            
+            <a href="/destino">Destinos</a>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Reservas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="reservas.html">Nueva Reserva</a>
+                        <a href="#">Mis Reservas</a>
+                    </div>
+            </li>
             <a href="/contacto" class="Formulario de Proovedores">Contáctenos</a>
+            <a href="/login">Login</a>
         </div>
     </nav>
 
