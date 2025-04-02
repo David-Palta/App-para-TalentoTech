@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Procesar Pago con AJAX</title>
     <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=N9s7FijS6X5M6GhOdZyi33Bgttj9VerPu_6ceYTKCjjm8W4gGfH67PTNVcaHPnL7Uo74FodRRbp3rVvbasewweCmcwvHdh96hxwmCm6JP7AFjeAX12pR8L2P2S45RMvI8Y_W6qGgb2Rsq-zVavFqTKCob4_W2Ekf3yAW4Dg4Jix-fM57-i8KwBxDi5BpQuGJhsg_02pFvLJQ4Vnsh0u4DupO4FOyfO5NjB0_Pj3ijSd94eQ93i_JGW2qrKA9ayZk40J17qhf5cOTrmjDxpDF6Ns1b23pB05qJzJBWw1cV8U6-388_mBwOQ2UN27EbUJpxE8zSrsBfkU9c7W1xC4JIQkCF6GG4LN9IXRBWfzisjiBLjr1fBmFperv96IrTEPyU-CwR6RHc89tmLBvVj8Rs7fh9pTNxWKMYechYD6IlaeH3s3Ktv3YoR63VQr3rZsC2YzF_QPmAZAPkWs0KgvUEYi-A6EiIh6voV67erz3oGnnuJfVqbSc1CrwGjFfHcSTjRCkoJUSTJ7xVWClNWDuvHciTKDhseg--SNBoPqiCkq9TSZrnAtT-90bnsXp8MtPhGKhaVom72Jtb4F4vo9SU4zHGhdexj2nTZ1Ysz87E2_CbxV5ptBzwJ-X211Sa-TM0DKA5u5uYxUdusJ0Tv4CMrnyZjTtIEeppKkDiPyNvIQwqL2_gmL5Jqv9hq2vmcdkbtd1hYkFgI1fMfKdp7Kwue1Iesxq5pwY_5BQ0XGsQnUwrATy8acFfi2yYB1rsm44lNU8n8oQnw7OL9N-pL8mDI3uvhZ_yyEKXCezM0hF-b3fRFtSRia-Le5yM5GeK7-F8TZd3RfRJMYiKn3ijRWeC241FArkbxz1BNRHMoVwih9zF3geOrYmjF19y5Riu19xZXX-WcmTfu3l_xkL3MfRnwaJKUhbWuBxoEtCYwVoXqZ-2EAhzuDN4MgkGCbDvx6FW7OJJEMy5Q71ENC9_PTRPiVIqG5CO9DXfh0M-157YJ_Bg40BoNgGT6mG3RAK5QerpHzRurUiDb4fss6pCc50Oc-ETrlIbOMbTjWKY66bRNKK5ekntUWKAOObGyDKP-RdCpWas_vTSONNiUvNs1_iA7sH6ZnqZYEEJ_IuYDHgWW-MBS8F5YRB9RVS8tRd_0QS2N0WF_qeCGolTdTH_tzPyNe0EuD1UJbFLXT4r2lhmXhm8ovMLTuCaB1Yq0OQP0B-4-bU_RONLkHaEaFrt_YVDdP8N_I9ov3Y5NkgKlsLwNrv_vAB93IdZ8IAqnIw2OEzIMGLhmWEvc-DI3BHDyymeKoQ-xkQ5vftk1-Y0Mfv0JP9g61QnXc0KR5GfrfkvYp_TCaYwxFtWApfFLg_Zx4VQW_Sd7h-rymH--j1q4NNvPcVvvJ-POTkNMxhtyPDZbReya6rwRVj0-LLWqBE9IdmrseC4Tcngw-I2PV2EE76a4Zl0fn36ZSFPLvlK5xEL_2Vp7YrqdDFqjMysaMzDsEmTHz0ApQ7xciPkDac3QnjZH5cgquKl8HOQRl31k5VDc0feGfZNuZj1zThhWKm8n4nz6ofVIY8A3Lw_yA3FHkw-MtfW1KCOI5Xs1shzpPfjS4UzdMgKnyDLeKShDu_8PYYQRdEe4F7qWbeQqxNmjEldCVR0Pyi7Qp8nmxdTlSD85CFyBE_a_FGmetaT9JHTby17g" nonce="0ccbb6b3cd4fd51f05e9d4b2809aaa01" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8wLz91aT0yJmlrPTYzYTFiZWM1ZjcmYXR0aWQ9MC4yJnBlcm1tc2dpZD1tc2ctZjoxODI4MjE3NTMxNTczMzQ1ODI3JnRoPTE5NWYyMjI4OWQ5MjFlMjMmdmlldz1hdHQmZGlzcD1zYWZlJnJlYWxhdHRpZD1mX204eXA0ZXE1MCZ6dyZzYWRkYmF0PUFOR2pkSl80NjY4bzJ5bkE1V1pzUHY2SEo3NGY2cXhFSFo4djFHQVpGYWFyQkxtQzdkZGxLdEctQUx4SWF5SG9HSldDcDNBOEZGT0p2TGpkLU5BQU1XZDJfNkVqQUN6MGdpcjQtLVBKdUVSRWdJUUl1RmtGejFhRHFCN1czb3dBYWtJUV8wdVFZR0xqSmExbHNjQUtFSWFnS0Z0OS1POGlycmlIUkVWWVRjNW0xdElySXFwMlZLTWRjcGt3TWFKUzEzMHZaVXVZWmpzZ0d2c2NXZXRnR0gtNmVwMDVwazhzcjFIaDJIZmNVdGd0SGFiV1VIWDB5Z3U5bHJOd1E1ZzZYZFAyYkRtanludlh5c1U3aDE4MG5fN3pQSVBEeHZFcFlRc0pGRkVNbW8yUm5QRThNYzNOQXdqSVpYblVZci1CT3pJdVhSYndoMUlrT2hYZHB6SDlFTEp1M01ER2pGQzZia2h6R3FLOGFjdzdIRTV4a2hxc0p3SXZQV1daY0hCVi14N25SMEpIU1JMakEwVlJDbmZ2UzNjcG5oRHdPVDhYX0R0MXh4dlNMeTQyeFNJREh0X25lS3dzTGRqRzJMVVRyX0hRczJvR1lmbF9iUTJ6NGxGQWhPMkg2dkNmTGdoelFURmloX3RWdDJkVFFua1FVdW16TzRzYjMtcVpKUG9UTmtFQUxCQ0cxYlFHZjJCYlNUeHRtcW41bWJpbm1sX2lIdFNGai1QX0ZycnVPU2ZQWFgyN1h1dkZQS18yYk45WTJVQWM2V2tGckZHb1NyY1MxR2RIV0k2Z29ZMnRkT2ZiY2RDa21pQmlELUFXek5IQ0liT0lEM3IwVmJpdExTTUJ1U001SEVjNTRZeE9oR2JjaTYtUWJ6M1FEQ2hWRVhPd2QyTFF4TVA0cVQ3Tjl6ZW1VMEVRZ3JuUVBrNUQ5Y2ppOGVWdklOeDZEeFFXSHAwZlE5VUJzako2T1dkbVhCVk50OThadlZBQVR0ZUVNS0hHMDNJT192cHduR0ZzY2xPRmhNVllDaWpMYzRMQTVEbTZSa3Vrd2xnSFlLR29UM29OU3lfS0ZPQUlTd1JfMGNaSUoxN3kyZy1EVXNRdVpRdXdKbzhUS2dZTW9Kel9tVEIzbmR5aTBmc0k2dnRVVlhvdjA0ZFc5dUk3NlhMS09JRmhmZk5jWHpOckY0N1M3X21STXVpd054SWVscVB4Q2RzSFdUdTZlXzNEcVV5M0NORWRJeHdjZHBFMDR2Nm9IVml1VkN4SnZjQ2p1SS1teTdxUnY1a0VBWGo2Y05xQmdROEJ5Rlo3VnFtbmxPTjlOeW1NcGtlT090RFRKNVE3d19NY3NPXzRoemJOYlUtQnR6aGVCVG9OVVVSd2FjWUphYng1YlVESw"/><style>
-        body { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; }
+        .body { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; }
         input, select { width: 100%; padding: 8px; box-sizing: border-box; }
@@ -17,31 +18,55 @@
     </style>
 </head>
 <body>
-    <h2>Procesar Pago</h2>
-    <form id="formularioPago">
-        <div class="form-group">
-            <label for="tarjeta">Número de Tarjeta:</label>
-            <input type="text" id="tarjeta" placeholder="1234 5678 9012 3456" required>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-ecotrip.jpg" alt="EcoReservas Logo">
+            <h1>ECO TRIP</h1>
         </div>
-        <div class="form-group">
-            <label for="nombre">Nombre en la Tarjeta:</label>
-            <input type="text" id="nombre" placeholder="Juan Pérez" required>
-        </div>
-        <div class="form-group">
-            <label for="fecha">Fecha de Expiración:</label>
-            <input type="text" id="fecha" placeholder="MM/AA" required>
-        </div>
-        <div class="form-group">
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" placeholder="123" required>
-        </div>
-        <div class="form-group">
-            <label for="monto">Monto a Pagar ($):</label>
-            <input type="number" id="monto" placeholder="100.00" required>
-        </div>
-        <button type="submit">Pagar</button>
-    </form>
-    <div id="mensaje"></div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Reservas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="reservas.html">Nueva Reserva</a>
+                        <a href="misReservas.html">Mis Reservas</a>
+                    </div>
+                </li>
+                
+                <li><a href="contactos.html">Contactenos</a></li>
+                <li><a href="home.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <h2>Procesar Pago</h2>
+        <form id="formularioPago">
+            <div class="form-group">
+                <label for="tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre en la Tarjeta:</label>
+                <input type="text" id="nombre" placeholder="Juan Pérez" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de Expiración:</label>
+                <input type="text" id="fecha" placeholder="MM/AA" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="123" required>
+            </div>
+            <div class="form-group">
+                <label for="monto">Monto a Pagar ($):</label>
+                <input type="number" id="monto" placeholder="100.00" required>
+            </div>
+            <button type="submit">Pagar</button>
+        </form>
+        <div id="mensaje"></div>
+    </div>
 
     <script src="../Js/pago.js"></script>
 </body>

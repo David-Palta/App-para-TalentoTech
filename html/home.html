@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Turismo Colombia</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         body {
             margin: 0;
@@ -16,7 +17,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background: #2c8a4a;
+            background: #1e472e;
             color: white;
         }
         .nav-links {
@@ -70,10 +71,9 @@
         footer {
             text-align: center;
             padding: 1rem;
-            background: #2c8a4a;
+            background: #1e472e;
             color: white;
         }
-    }
     .dropdown {
         position: relative;
         display: inline-block;
@@ -96,7 +96,7 @@
     }
     
     .dropdown-content a:hover {
-        background-color: #2c8a4a;
+        background-color: #1e472e;
         color: white;
     }
     
@@ -108,21 +108,25 @@
 <body>
 
     <nav>
-        <h1>Eco Turismo</h1>
+        <div class="logo">
+            <img src="../img/logo-ecotrip.jpg" alt="EcoReservas Logo">
+            <h1>ECO TRIP</h1>
+        </div>
+        <h1 id="NameLoged"></h1>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="nav-links">
-            <a href="/">Inicio</a>
+            <a href="../html/home.html">Inicio</a>
             
-            <a href="/destino">Destinos</a>
+            <a href="destinos.html">Destinos</a>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Reservas <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="reservas.html">Nueva Reserva</a>
-                        <a href="#">Mis Reservas</a>
+                        <a href="misReservas.html">Mis Reservas</a>
                     </div>
             </li>
-            <a href="/contacto" class="Formulario de Proovedores">Contáctenos</a>
-            <a href="/login">Login</a>
+            <a href="contactos.html" class="Formulario de Proovedores">Contáctenos</a>
+            <a id="login-reference" href="login.html">Login</a>
         </div>
     </nav>
 
@@ -131,18 +135,20 @@
         <p>Descubre la riqueza natural, desde la Amazonía hasta la Sierra Nevada.</p>
     </header>
 
-    <div class="carousel">
+    <!-- <div class="carousel">
         <img src="/mnt/data/image.png" alt="Eco Time" class="active">
         <img src="https://via.placeholder.com/1200x600?text=Amazonia" alt="Amazonía Colombiana">
         <img src="https://via.placeholder.com/1200x600?text=Sierra+Nevada" alt="Sierra Nevada">
         <img src="https://via.placeholder.com/1200x600?text=Pacifico" alt="Pacífico Colombiano">
-    </div>
+    </div> -->
 
     <footer>
         &copy; 2025 Eco Turismo Colombia - Todos los derechos reservados
     </footer>
 
-    <script src="Api.js">
+    <!-- <script src="Api.js">
+    </script> -->
+    <script src="../Js/home.js">
     </script>
 
 </body>
