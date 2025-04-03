@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pagos-styles.css">
+</head>
+<body>
+    <div class="overlay" id="dialogBox">
+        <div class="dialog">
+          <h2>¿Deseas continuar?</h2>
+          <div class="buttons">
+            <button class="continue-btn" onclick="goToPayment()">Continuar</button>
+            <button class="cancel-btn" onclick="closeDialog()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        function goToPayment() {
+          // Redirige a la pasarela de pagos
+          window.location.href = "https://www.ejemplo-pasarela.com/pago";
+        }
+      
+        function closeDialog() {
+          document.getElementById("dialogBox").style.display = "none";
+        }
+      </script>
+</body>
+</html>
