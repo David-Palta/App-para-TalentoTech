@@ -52,10 +52,20 @@
                 <label for="personas">Personas:</label>
                 <input type="number" id="personas" min="1" max="10" required>
             </div>
-            <button type="submit" class="btn">Confirmar Reserva</button>
+            <button class="btn-open-modal" onclick="openDialog()">Confirmar Reserva</button>
         </form>
         <div id="mensaje-reserva" class="mensaje"></div>
     </section>
         </form>
     </section>
+    <div class="overlay" id="dialogBox">
+        <div class="dialog">
+            <h2>¿Deseas continuar?</h2>
+            <div class="buttons">
+            <button class="continue-btn" onclick="goToPayment()">Continuar</button>
+            <button class="cancel-btn" onclick="closeDialog()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="../Js/reservas.js"></script>
 </body>

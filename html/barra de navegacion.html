@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Aventura</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            background-color: #35f06a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-ecotrip.jpg" alt="EcoReservas Logo">
+            <h1>ECO TRIP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Reservas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="reservas.html">Nueva Reserva</a>
+                        <a href="misReservas.html">Mis Reservas</a>
+                    </div>
+                </li>
+                
+                <li><a href="contactos.html">Contactenos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Formulario de Registro a la Aventura</h1>
+    <form action="/submit" method="post">
+        <!-- Nombre de la Aventura -->
+        <div class="form-group">
+            <label for="nombreAventura">Nombre de la Aventura:</label>
+            <input type="text" id="nombreAventura" name="nombreAventura" placeholder="Ej: La Histórica Aventura" required>
+        </div>
+
+        <!-- Dirección de la aventura -->
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ej: Av. Central #123" required>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="form-group">
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +34 123 456 789" required pattern="[+]{1}[0-9]{2} [0-9]{3} [0-9]{3} [0-9]{3}">
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Ej: info@aventura--.com" required>
+        </div>
+
+        <!-- Fecha de Apertura -->
+        <div class="form-group">
+            <label for="fechaApertura">Fecha de Apertura:</label>
+            <input type="date" id="fechaApertura" name="fechaApertura" required>
+        </div>
+
+        <!-- Horario de Atención -->
+        <div class="form-group">
+            <label for="horario">Horario de Atención:</label>
+            <input type="time" id="horarioInicio" name="horarioInicio" required> a 
+            <input type="time" id="horarioFin" name="horarioFin" required>
+        </div>
+
+        <!-- Tipos de aventura-->
+        <div class="form-group">
+            <label for="tipoAventura">Tipo de Aventura:</label>
+            <select id="tipoAventura" name="tipoAventura" required>
+                <option value="">Seleccionar...</option>
+                <option value="internacional">Internacional</option>
+                <option value="nacional">Nacional</option>
+                <option value="regional">Regional</option>
+                <option value="local">local</option>
+                <option value="tradicional">Tradicional</option>
+            </select>
+        </div>
+
+        <!-- Capacidad de la Aventura -->
+        <div class="form-group">
+            <label for="capacidad">Capacidad (Número de aventureros):</label>
+            <input type="number" id="capacidad" name="capacidad" min="1" max="500" placeholder="Ej: 100" required>
+        </div>
+
+        <!-- Accesibilidad -->
+        <div class="form-group">
+            <label>Accesibilidad:</label>
+            <input type="checkbox" id="accesibilidad" name="accesibilidad" value="accesible"> Aventura accesible
+        </div>
+
+        <!-- Opciones de Servicio -->
+        <div class="form-group">
+            <label>Opciones de Servicio:</label><br>
+            <input type="radio" id="servicioInternacional" name="servicio" value="Internacional" required>
+            <label for="servicioInternacional">Servicio Internacional</label><br>
+            <input type="radio" id="servicioNacional" name="servicio" value="Nacional" required>
+            <label for="servicioNacional">Recogida en Aeropuertos</label><br>
+            <input type="radio" id="servicioAventura" name="servicio" value="Aventura" required>
+            <label for="servicioAventura">Aventura</label>
+        </div>
+
+        <!-- Comentarios o Sugerencias -->
+        <div class="form-group">
+            <label for="comentarios">Comentarios o Sugerencias:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..."></textarea>
+        </div>
+
+        <!-- Contraseña del propietario -->
+        <div class="form-group">
+            <label for="password">Contraseña de Propietario:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <!-- Subir Logotipo de la Aventura-->
+        <div class="form-group">
+            <label for="logo">Subir Logotipo de la Aventura:</label>
+            <input type="file" id="logo" name="logo" accept="image/png, image/jpeg">
+        </div>
+
+        <!-- Enviar Formulario -->
+        <div class="form-group">
+            <input type="submit" value="Registrar Aventura>
+
+       
+        </div>
+    </form>
+
+</body>
+</html>
+</html>
