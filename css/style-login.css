@@ -38,7 +38,7 @@ body {
 
   /* Estilos del botón */
   .login-container button {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #0a191e;
     border: none;
@@ -49,7 +49,7 @@ body {
   }
 
   .login-container button:hover {
-    background-color: #257f40;
+    background-color: #72a549;
   }
 
   /* Estilos para el mensaje de error */
@@ -79,5 +79,11 @@ body {
   }
   
   #testCredentials:hover {
-    background-color: #257f40;
+    background-color: #72a549;
+  }
+  #buttons{
+    display: flex;
+  }
+  #buttons button{
+    margin: 10px;
   }
