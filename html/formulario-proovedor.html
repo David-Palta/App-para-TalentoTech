@@ -1,0 +1,178 @@
+<!-- formulario-proveedor.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Proveedor - EcoTurismo</title>
+    <link rel="stylesheet" href="../css/stylesformularios.css">
+    <style>
+        .servicio-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .btn-remove-service {
+            background-color: #020f01c0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Proveedor</h1>
+        <form id="registro-proveedor-form">
+            <div class="form-section">
+                <h2>Información de la Empresa</h2>
+                <div class="form-group">
+                    <label for="nombre-empresa">Nombre de la Empresa:</label>
+                    <input type="text" id="nombre-empresa" name="nombre_empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="ruc">RUC/RFC/Identificador Fiscal:</label>
+                    <input type="text" id="ruc" name="ruc" required>
+                </div>
+                <div class="form-group">
+                    <label for="anios-operacion">Años de Operación:</label>
+                    <input type="number" id="anios-operacion" name="anios_operacion" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion-empresa">Descripción de la Empresa:</label>
+                    <textarea id="descripcion-empresa" name="descripcion_empresa" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="logo-empresa">Logo de la Empresa:</label>
+                    <input type="file" id="logo-empresa" name="logo_empresa" accept="image/*">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Información de Contacto</h2>
+                <div class="form-group">
+                    <label for="email-empresa">Email Corporativo:</label>
+                    <input type="email" id="email-empresa" name="email_empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono-empresa">Teléfono Corporativo:</label>
+                    <input type="tel" id="telefono-empresa" name="telefono_empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion-empresa">Dirección Fiscal:</label>
+                    <textarea id="direccion-empresa" name="direccion_empresa" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="sitio-web">Sitio Web:</label>
+                    <input type="url" id="sitio-web" name="sitio_web">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Servicios Ofrecidos</h2>
+                <div id="servicios-container">
+                    <!-- Los servicios se añadirán dinámicamente aquí -->
+                </div>
+                <button type="button" id="btn-agregar-servicio" class="btn btn-secondary">+ Agregar Servicio</button>
+            </div>
+
+            <div class="form-section">
+                <h2>Certificaciones</h2>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="certificado-eco" name="certificado_eco">
+                    <label for="certificado-eco">Contamos con certificación ecológica</label>
+                </div>
+                <div class="form-group">
+                    <label for="tipo-certificacion">Tipo de Certificación:</label>
+                    <select id="tipo-certificacion" name="tipo_certificacion">
+                        <option value="">Seleccione una opción</option>
+                        <option value="ISO14001">ISO 14001</option>
+                        <option value="Rainforest">Rainforest Alliance</option>
+                        <option value="Biosphere">Biosphere Responsible Tourism</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group" id="otra-certificacion-group" style="display:none;">
+                    <label for="otra-certificacion">Especifique:</label>
+                    <input type="text" id="otra-certificacion" name="otra_certificacion">
+                </div>
+                <div class="form-group">
+                    <label for="archivo-certificacion">Subir Certificado (PDF/Imagen):</label>
+                    <input type="file" id="archivo-certificacion" name="archivo_certificacion" accept=".pdf,.jpg,.jpeg,.png">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Datos de Acceso</h2>
+                <div class="form-group">
+                    <label for="contrasena-proveedor">Contraseña:</label>
+                    <input type="password" id="contrasena-proveedor" name="contrasena_proveedor" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label for="confirmar-contrasena-proveedor">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar-contrasena-proveedor" name="confirmar_contrasena_proveedor" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terminos-proveedor" name="terminos_proveedor" required>
+                    <label for="terminos-proveedor">Acepto los términos y condiciones para proveedores</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar Proveedor</button>
+        </form>
+    </div>
+
+    <!-- Plantilla para servicios (usada por JavaScript) -->
+    <template id="servicio-template">
+        <div class="servicio-item">
+            <div class="form-group">
+                <label>Tipo de Servicio:</label>
+                <select name="tipo_servicio[]" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option value="alojamiento">Alojamiento Ecológico</option>
+                    <option value="tour">Tour Guiado</option>
+                    <option value="aventura">Deporte de Aventura</option>
+                    <option value="cultural">Experiencia Cultural</option>
+                    <option value="voluntariado">Voluntariado Ambiental</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Descripción del Servicio:</label>
+                <textarea name="descripcion_servicio[]" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Experiencia en este servicio (años):</label>
+                <input type="number" name="experiencia_servicio[]" min="0">
+            </div>
+            <div class="form-group">
+                <label>Actividades Principales:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="actividades[]" value="senderismo" id="senderismo-{id}">
+                    <label for="senderismo-{id}">Senderismo</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="actividades[]" value="observacion_aves" id="observacion_aves-{id}">
+                    <label for="observacion_aves-{id}">Observación de aves</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="actividades[]" value="canotaje" id="canotaje-{id}">
+                    <label for="canotaje-{id}">Canotaje/Kayak</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="actividades[]" value="buceo" id="buceo-{id}">
+                    <label for="buceo-{id}">Buceo/Snorkel</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="otra_actividad[]" placeholder="Otra actividad">
+                </div>
+            </div>
+            <button type="button" class="btn btn-remove-service">Eliminar Servicio</button>
+        </div>
+    </template>
+
+    <script src="../js/proveedores.js"></script>
+</body>
+</html>
