@@ -1,5 +1,5 @@
 
-.container {
+.container-form {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
@@ -8,36 +8,36 @@
     box-shadow: 0 0 10px rgba(5, 37, 0, 0.733);
 }
 
-h1, h2 {
+.h1-form {
     color: azure;
 }
 
-.form-section {
+.form-section-form {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #eee;
 }
 
-.form-group {
+.form-group-form {
     margin-bottom: 1rem;
     color: azure;
 }
 
-.form-group label {
+.form-group-form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"],
-.form-group input[type="tel"],
-.form-group input[type="url"],
-.form-group input[type="number"],
-.form-group input[type="date"],
-.form-group select,
-.form-group textarea {
+.form-group-form input[type="text"],
+.form-group-form input[type="email"],
+.form-group-form input[type="password"],
+.form-group-form input[type="tel"],
+.form-group-form input[type="url"],
+.form-group-form input[type="number"],
+.form-group-form input[type="date"],
+.form-group-form select,
+.form-group-form textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
@@ -45,7 +45,7 @@ h1, h2 {
     font-size: 1rem;
 }
 
-.form-group textarea {
+.form-group-form textarea {
     min-height: 100px;
     resize: vertical;
 }
@@ -66,16 +66,17 @@ h1, h2 {
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
+    background-color: rgba(2, 203, 2, 0.533);
     transition: background-color 0.3s;
 }
 
 .btn-primary {
-    background-color: #080808;
+    background-color: #080;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #072717;
+    background-color: #072;
 }
 
 .btn-secondary {
@@ -84,7 +85,7 @@ h1, h2 {
 }
 
 .btn-secondary:hover {
-    background-color: #021a16;
+    background-color: #072;
 }
 
 .login-link {

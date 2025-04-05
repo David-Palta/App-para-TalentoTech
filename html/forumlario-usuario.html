@@ -6,82 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario - EcoTurismo</title>
     <link rel="stylesheet" href="../css/stylesformularios.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!--  -->
-    <div class="container">
-        <h1>Registro de Usuario</h1>
-        <form id="registro-usuario-form">
-            <div class="form-section">
-                <h2>Información Personal</h2>
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-ecotrip.jpg" alt="EcoReservas Logo">
+            <h1>ECO TRIP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Reservas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="reservas.html">Nueva Reserva</a>
+                        <a href="misReservas.html">Mis Reservas</a> <!-- chequeo de reservas -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Registro <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <!-- <a href="forumlario-usuario.html">Usuarios</a> -->
+                        <a href="formulario-proovedor.html">Proveedores</a> <!-- chequeo de reservas -->
+                    </div>
+                </li>
+                
+                <li><a href="contactos.html">Contactenos</a></li>
+                <!-- <li><a href="home.html">Login</a></li> -->
+            </ul>
+        </nav>
+    </header>
+        <div class="container-form">
+            <h1 style="color: white;">Registro de Usuario</h1>
+            <form id="registro-proveedor-form">
+                <div class=form-form-section-form">
+                    <h2  style="color: white;">Información Personal</h2 style="color: white;">
+                    <div class="form-group-form">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group-form">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="form-group-form">
+                        <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" required>
+    
+                <div class="orm-form-section-form">
+                    <h2 style="color: white;">Datos de Contacto</h2 style="color: white;">
+                    <div class="form-group-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group-form">
+                        <label for="confirmar-email">Confirmar Email:</label>
+                        <input type="email" id="confirmar-email" name="confirmar_email" required>
+                    </div>
+                    <div class="form-group-form">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group-form">
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais" required>
+                            <option value="">Seleccione un país</option>
+                            <option value="MX">México</option>
+                            <option value="CO">Colombia</option>
+                            <option value="AR">Argentina</option>
+                            <!-- Más opciones -->
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-                    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required>
+    
+                <div class="orm-form-section-form">
+                    <h2 style="color: white;">Seguridad</h2 style="color: white;">
+                    <div class="form-group-form">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" required minlength="8">
+                    </div>
+                    <div class="form-group-form">
+                        <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                        <input type="password" id="confirmar-contrasena" name="confirmar_contrasena" required>
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-section">
-                <h2>Datos de Contacto</h2>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+    
+                <div class="orm-form-section-form">
+                    <div class="form-group-form checkbox-group">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones y la política de privacidad</label>
+                    </div>
+                    <div class="form-group-form checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Deseo recibir información sobre ofertas y novedades</label>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="confirmar-email">Confirmar Email:</label>
-                    <input type="email" id="confirmar-email" name="confirmar_email" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono">
-                </div>
-                <div class="form-group">
-                    <label for="pais">País:</label>
-                    <select id="pais" name="pais" required>
-                        <option value="">Seleccione un país</option>
-                        <option value="MX">México</option>
-                        <option value="CO">Colombia</option>
-                        <option value="AR">Argentina</option>
-                        <!-- Más opciones -->
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-section">
-                <h2>Seguridad</h2>
-                <div class="form-group">
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" required minlength="8">
-                </div>
-                <div class="form-group">
-                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
-                    <input type="password" id="confirmar-contrasena" name="confirmar_contrasena" required>
-                </div>
-            </div>
-
-            <div class="form-section">
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos">Acepto los términos y condiciones y la política de privacidad</label>
-                </div>
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter">
-                    <label for="newsletter">Deseo recibir información sobre ofertas y novedades</label>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Registrarse</button>
-            <p class="login-link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
-        </form>
-    </div>
-
+    
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <p class="login-link" style="color: white;">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+            </form>
+        </div>
     <script src="../js/usuarios.js"></script>
 </body>
 </html>
