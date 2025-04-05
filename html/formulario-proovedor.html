@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Proveedor - EcoTurismo</title>
     <link rel="stylesheet" href="../css/stylesformularios.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         .servicio-item {
             border: 1px solid #ddd;
@@ -20,68 +21,97 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Registro de Proveedor</h1>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-ecotrip.jpg" alt="EcoReservas Logo">
+            <h1>ECO TRIP</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Reservas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="reservas.html">Nueva Reserva</a>
+                        <a href="misReservas.html">Mis Reservas</a> <!-- chequeo de reservas -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Registro <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="forumlario-usuario.html">Usuarios</a>
+                        <!-- <a href="misReservas.html">Mis Reservas</a> chequeo de reservas -->
+                    </div>
+                </li>
+                
+                <li><a href="contactos.html">Contactenos</a></li>
+                <!-- <li><a href="home.html">Login</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="container-form">
+        <h1 id="h1-form" style="color: white;">Registro de Proveedor</h1>
         <form id="registro-proveedor-form">
-            <div class="form-section">
-                <h2>Información de la Empresa</h2>
-                <div class="form-group">
+            <div class="form-form-section-form">
+                <h2 id="h1-form" style="color: white;">Información de la Empresa</h2>
+                <div class="form-group-form">
                     <label for="nombre-empresa">Nombre de la Empresa:</label>
                     <input type="text" id="nombre-empresa" name="nombre_empresa" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="ruc">RUC/RFC/Identificador Fiscal:</label>
                     <input type="text" id="ruc" name="ruc" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="anios-operacion">Años de Operación:</label>
                     <input type="number" id="anios-operacion" name="anios_operacion" min="0">
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="descripcion-empresa">Descripción de la Empresa:</label>
                     <textarea id="descripcion-empresa" name="descripcion_empresa" rows="4" required></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="logo-empresa">Logo de la Empresa:</label>
                     <input type="file" id="logo-empresa" name="logo_empresa" accept="image/*">
                 </div>
             </div>
 
-            <div class="form-section">
-                <h2>Información de Contacto</h2>
-                <div class="form-group">
+            <div class="form-section-form">
+                <h2 style="color: white;">Información de Contacto</h2>
+                <div class="form-group-form">
                     <label for="email-empresa">Email Corporativo:</label>
                     <input type="email" id="email-empresa" name="email_empresa" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="telefono-empresa">Teléfono Corporativo:</label>
                     <input type="tel" id="telefono-empresa" name="telefono_empresa" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="direccion-empresa">Dirección Fiscal:</label>
                     <textarea id="direccion-empresa" name="direccion_empresa" rows="3" required></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="sitio-web">Sitio Web:</label>
                     <input type="url" id="sitio-web" name="sitio_web">
                 </div>
             </div>
 
-            <div class="form-section">
-                <h2>Servicios Ofrecidos</h2>
+            <div class="form-section-form">
+                <h2 style="color: white;">Servicios Ofrecidos</h2>
                 <div id="servicios-container">
                     <!-- Los servicios se añadirán dinámicamente aquí -->
                 </div>
                 <button type="button" id="btn-agregar-servicio" class="btn btn-secondary">+ Agregar Servicio</button>
             </div>
 
-            <div class="form-section">
-                <h2>Certificaciones</h2>
-                <div class="form-group checkbox-group">
+            <div class="form-section-form">
+                <h2 style="color: white;">Certificaciones</h2>
+                <div class="form-group-form checkbox-group">
                     <input type="checkbox" id="certificado-eco" name="certificado_eco">
                     <label for="certificado-eco">Contamos con certificación ecológica</label>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="tipo-certificacion">Tipo de Certificación:</label>
                     <select id="tipo-certificacion" name="tipo_certificacion">
                         <option value="">Seleccione una opción</option>
@@ -91,30 +121,30 @@
                         <option value="otro">Otro</option>
                     </select>
                 </div>
-                <div class="form-group" id="otra-certificacion-group" style="display:none;">
+                <div class="form-group-form" id="otra-certificacion-group" style="display:none;">
                     <label for="otra-certificacion">Especifique:</label>
                     <input type="text" id="otra-certificacion" name="otra_certificacion">
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="archivo-certificacion">Subir Certificado (PDF/Imagen):</label>
                     <input type="file" id="archivo-certificacion" name="archivo_certificacion" accept=".pdf,.jpg,.jpeg,.png">
                 </div>
             </div>
 
-            <div class="form-section">
-                <h2>Datos de Acceso</h2>
-                <div class="form-group">
+            <div class="form-section-form">
+                <h2 style="color: white;">Datos de Acceso</h2>
+                <div class="form-group-form">
                     <label for="contrasena-proveedor">Contraseña:</label>
                     <input type="password" id="contrasena-proveedor" name="contrasena_proveedor" required minlength="8">
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <label for="confirmar-contrasena-proveedor">Confirmar Contraseña:</label>
                     <input type="password" id="confirmar-contrasena-proveedor" name="confirmar_contrasena_proveedor" required>
                 </div>
             </div>
 
-            <div class="form-section">
-                <div class="form-group checkbox-group">
+            <div class="form-section-form">
+                <div class="form-group-form checkbox-group">
                     <input type="checkbox" id="terminos-proveedor" name="terminos_proveedor" required>
                     <label for="terminos-proveedor">Acepto los términos y condiciones para proveedores</label>
                 </div>
@@ -127,7 +157,7 @@
     <!-- Plantilla para servicios (usada por JavaScript) -->
     <template id="servicio-template">
         <div class="servicio-item">
-            <div class="form-group">
+            <div class="form-group-form">
                 <label>Tipo de Servicio:</label>
                 <select name="tipo_servicio[]" required>
                     <option value="">Seleccione un tipo</option>
@@ -139,15 +169,15 @@
                     <option value="otro">Otro</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group-form">
                 <label>Descripción del Servicio:</label>
                 <textarea name="descripcion_servicio[]" rows="3" required></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group-form">
                 <label>Experiencia en este servicio (años):</label>
                 <input type="number" name="experiencia_servicio[]" min="0">
             </div>
-            <div class="form-group">
+            <div class="form-group-form">
                 <label>Actividades Principales:</label>
                 <div class="checkbox-group">
                     <input type="checkbox" name="actividades[]" value="senderismo" id="senderismo-{id}">
@@ -165,7 +195,7 @@
                     <input type="checkbox" name="actividades[]" value="buceo" id="buceo-{id}">
                     <label for="buceo-{id}">Buceo/Snorkel</label>
                 </div>
-                <div class="form-group">
+                <div class="form-group-form">
                     <input type="text" name="otra_actividad[]" placeholder="Otra actividad">
                 </div>
             </div>

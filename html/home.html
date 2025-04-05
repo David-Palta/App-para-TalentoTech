@@ -53,7 +53,10 @@
         }
         header {
             text-align: center;
-            padding: 4rem 2rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
             background: #e8f5e9 !important;
             display: block !important;
             color: #0a191e;
@@ -105,6 +108,77 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
+        /* Contenedor del carrusel */
+        .carousel-1 {
+          position: relative;
+          max-width: 600px;
+          margin: 50px auto;
+          overflow: hidden;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+        }
+    
+        /* Contenedor de las diapositivas */
+        .slides-1 {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+    
+        /* Cada diapositiva */
+        .slide-1 {
+          min-width: 100%;
+          box-sizing: border-box;
+          position: relative;
+          text-align: center;
+        }
+        
+        .slide-1 img {
+            vertical-align: top;
+            width: 600px;       /* Ancho fijo */
+            height: 400px;      /* Alto fijo */
+            object-fit: cover;  /* Cubre el contenedor recortando si es necesario */
+          }
+    
+        /* Estilos para el pie de foto */
+        .caption-1 {
+          position: absolute;
+          bottom: 52px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+        .caption-2 {
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+    
+        /* Botones de navegación */
+        .prev1, .next2 {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 18px;
+        }
+        
+        .prev1 { left: 10px; }
+        .next2 { right: 10px; }
     </style>
 </head>
 <body>
@@ -127,6 +201,13 @@
                         <a href="misReservas.html">Mis Reservas</a>
                     </div>
             </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Registro <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="forumlario-usuario.html">Usuarios</a>
+                        <a href="formulario-proovedor.html">Proveedores</a>
+                    </div>
+            </li>
             <a href="contactos.html" class="Formulario de Proovedores">Contáctenos</a>
             <a id="login-reference" href="login.html">Login</a>
         </div>
@@ -136,13 +217,31 @@
         <h2>Explora la Diversidad Ecológica de Colombia</h2>
         <p>Descubre la riqueza natural, desde la Amazonía hasta la Sierra Nevada.</p>
     </header>
-
-    <!-- <div class="carousel">
-        <img src="/mnt/data/image.png" alt="Eco Time" class="active">
-        <img src="https://via.placeholder.com/1200x600?text=Amazonia" alt="Amazonía Colombiana">
-        <img src="https://via.placeholder.com/1200x600?text=Sierra+Nevada" alt="Sierra Nevada">
-        <img src="https://via.placeholder.com/1200x600?text=Pacifico" alt="Pacífico Colombiano">
-    </div> -->
+    <div class="carousel-1">
+        <div class="slides-1">
+          <!-- Diapositiva 1 -->
+          <div class="slide-1">
+            <img src="../img/pico de loro 3.jpg" alt="Imagen 1">
+            <div class="caption-1">Picolo del loro - Saladito</div>
+            <div class="caption-2">Cali</div>
+          </div>
+          <!-- Diapositiva 2 -->
+          <div class="slide-1">
+            <img src="../img/pico de loro 1.jpg" alt="Imagen 2">
+            <div class="caption-1">Pico del loro - Saladito</div>
+            <div class="caption-2">Cali</div>
+          </div>
+          <!-- Diapositiva 3 -->
+          <div class="slide-1">
+            <img src="../img/selva amazonica 1.jpg" alt="Imagen 3">
+            <div class="caption-1">Selva amazonica</div>
+            <div class="caption-2">Colombia</div>
+          </div>
+        </div>
+        <!-- Botones de navegación -->
+        <button class="prev1">&#10094;</button>
+        <button class="next2">&#10095;</button>
+      </div>
 
     <footer>
         &copy; 2025 Eco Turismo Colombia - Todos los derechos reservados
@@ -152,6 +251,33 @@
     </script> -->
     <script src="../Js/home.js">
     </script>
+    <script>
+            const slides = document.querySelector('.slides-1');
+            const slideElements = document.querySelectorAll('.slide-1');
+            const prevButton = document.querySelector('.prev1');
+            const nextButton = document.querySelector('.next2');
+            let index = 0;
+            
+            // Función para mostrar la diapositiva correspondiente
+            function showSlide(i) {
+              index = (i + slideElements.length) % slideElements.length;
+              slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+            }
+        
+            // Eventos para los botones
+            prevButton.addEventListener('click', () => {
+              showSlide(index - 1);
+            });
+        
+            nextButton.addEventListener('click', () => {
+              showSlide(index + 1);
+            });
+            
+            // Cambio automático de diapositivas cada 5 segundos (opcional)
+            setInterval(() => {
+              showSlide(index + 1);
+            }, 8000);
+          </script>
 
 </body>
 </html>
